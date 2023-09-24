@@ -1,4 +1,4 @@
 #!/bin/bash
 read -p "Enter Project Name: " prj
-awk -v P=$prj '{gsub(/CCGTemplate/,P); print}' conanfile.py | tee conanfile.py
-awk -v P=$prj '{gsub(/CCGTemplate/,P); print}' CMakeLists.txt | tee CMakeLists.txt
+sed -i "s/CCGTemplate/$prj/g" conanfile.py
+sed -i "s/CCGTemplate/$prj/g" CMakeLists.txt 
