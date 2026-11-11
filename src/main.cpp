@@ -2,6 +2,8 @@
 
 int main(int argc, char** args)
 {
-    App app;
+    (void)argc; // unused
+    (void)args; // unused
+    CCGTemplate::App app;
     return app.run();
 }

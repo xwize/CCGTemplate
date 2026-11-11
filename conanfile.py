@@ -1,27 +1,15 @@
-from conans import ConanFile, tools, CMake
-
-class CCGTemplate(ConanFile):
-    name = "CCGTemplate"
+from conan import ConanFile
+from conan.tools.cmake import CMakeDeps, CMakeToolchain, cmake_layout
+class vsm(ConanFile):
+    name = "vsm"
     version = "0.1"
+    package_type = "application"
     requires = [
-        "gtest/1.10.0",
-        "fmt/10.1.0"
+        "gtest/1.18.0",
+        "tl-expected/20190710"
     ]
-    exports = "*"
-    generators = "cmake"
-    build_policy = "missing"
+    generators = "CMakeConfigDeps", "CMakeToolchain"
+    settings = "os", "compiler", "build_type", "arch"
 
-    def conan_info(self):
-        pass
-
-    def configure(self):
-        pass
-
-    def build(self):
-        pass
-
-    def package(self):
-        pass
-     
-    def package_info(self):
-        pass
+    def layout(self):
+        cmake_layout(self)

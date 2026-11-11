@@ -1,17 +1,15 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.22...4.4)
 
-project(CCGTemplate)
+if(NOT DEFINED CMAKE_PROJECT_TOP_LEVEL_INCLUDES)
+    set(CMAKE_PROJECT_TOP_LEVEL_INCLUDES "conan_provider.cmake")
+endif()
 
-set(CMAKE_CXX_STANDARD 17)
+project(vsm)
+
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include(conan.cmake)
-conan_cmake_run(CONANFILE conanfile.py
-    BASIC_SETUP
-	BUILD missing
-)
-
-conan_basic_setup(TARGETS)
+find_package(tl-expected REQUIRED)
 
 add_subdirectory(src)
 

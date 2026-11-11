@@ -1,11 +1,20 @@
 #include "App.hpp"
 
-#include <fmt/format.h>
-
+#include <format>
 #include <iostream>
+
+namespace vsm
+{
+
+int test_me(int a, int b)
+{
+    return a + b;
+}
 
 int App::run()
 {
-    std::cout << fmt::format("{}\n", "Hello World!");
+    std::cout << std::format("{}\n", "Hello World!");
     return 0;
 }
+
+} // namespace vsm
