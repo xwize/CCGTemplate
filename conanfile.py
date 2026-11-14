@@ -1,7 +1,8 @@
 from conan import ConanFile
 from conan.tools.cmake import CMakeDeps, CMakeToolchain, cmake_layout
-class vsm(ConanFile):
-    name = "vsm"
+
+class CCGTemplate(ConanFile):
+    name = "CCGTemplate"
     version = "0.1"
     package_type = "application"
     requires = [

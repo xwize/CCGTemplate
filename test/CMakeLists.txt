@@ -5,6 +5,8 @@ set(TEST_SOURCE_FILES
 set(TEST_HEADER_FILES
 )
 
+find_package(GTest REQUIRED)
+
 add_executable("${CMAKE_PROJECT_NAME}_test"
     ${TEST_SOURCE_FILES}
     ${TEST_HEADER_FILES}
@@ -12,6 +14,6 @@ add_executable("${CMAKE_PROJECT_NAME}_test"
 )
 
 target_link_libraries("${CMAKE_PROJECT_NAME}_test"
-    PUBLIC tl::expected gtest gtest_main
+    PUBLIC tl::expected GTest::gtest GTest::gtest_main
     PRIVATE CCGTemplate_options
 )
