@@ -1,0 +1,19 @@
+Checks: >
+  -*,
+  bugprone-*,
+    -bugprone-easily-swappable-parameters,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+    -cppcoreguidelines-avoid-magic-numbers,
+  modernize-*,
+    -modernize-use-trailing-return-type,
+  readability-identifier-length
+
+CheckOptions:
+  readability-identifier-length.MinimumVariableNameLength: 3
+  readability-identifier-length.MinimumParameterNameLength: 3
+  readability-identifier-length.MinimumLoopCounterNameLength: 2
+  readability-identifier-length.IgnoredLoopCounterNames: '^[ijk_]$'
+  readability-identifier-length.IgnoredVariableNames: '^(x|y|z|w|dx|dy|dz|dw|n)$'
+  readability-identifier-length.IgnoredParameterNames: '^(x|y|z|w|dx|dy|dz|dw)$'
+  readability-identifier-length.IgnoredExceptionVariableNames: '^(e)$'

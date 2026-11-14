@@ -6,9 +6,9 @@
 namespace CCGTemplate
 {
 
-int test_me(int a, int b)
+int test_me(int arg_a, int arg_b)
 {
-    return a + b;
+    return arg_a + arg_b;
 }
 
 int App::run()

@@ -3,7 +3,7 @@
 namespace CCGTemplate
 {
 
-int test_me(int a, int b);
+int test_me(int arg_a, int arg_b);
 
 class App
 {

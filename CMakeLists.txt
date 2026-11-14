@@ -8,6 +8,7 @@ project(CCGTemplate)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 
 add_library(CCGTemplate_options INTERFACE)
 if(CMAKE_CXX_COMPILER_FRONTEND_VARIANT MATCHES "MSVC")
@@ -30,6 +31,13 @@ else()
             >
     )
 endif()
+
+find_program(CLANG_TIDY_EXE NAMES clang-tidy)
+if(CLANG_TIDY_EXE)
+    set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_EXE}")
+endif()
+
+message(STATUS "clang-tidy: ${CLANG_TIDY_EXE}")
 
 find_package(tl-expected REQUIRED)
 
