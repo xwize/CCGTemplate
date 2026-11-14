@@ -3,7 +3,7 @@
 #include <format>
 #include <iostream>
 
-namespace vsm
+namespace CCGTemplate
 {
 
 int test_me(int a, int b)
@@ -17,4 +17,4 @@ int App::run()
     return 0;
 }
 
-} // namespace vsm
+} // namespace CCGTemplate

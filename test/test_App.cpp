@@ -4,7 +4,7 @@
 
 TEST(App, TestMe)
 {
-    EXPECT_EQ(vsm::test_me(1, 2), 3);
+    EXPECT_EQ(CCGTemplate::test_me(1, 2), 3);
 }
 
 TEST(App, Run)

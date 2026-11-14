@@ -12,23 +12,7 @@ add_executable("${CMAKE_PROJECT_NAME}"
     ${HEADER_FILES}
 )
 
-target_compile_options("${CMAKE_PROJECT_NAME}" PRIVATE
-    $<$<CXX_COMPILER_ID:GNU>:
-    -Wall
-    -Wextra
-    -Wpedantic
-    -Wshadow
-    -Wconversion
-    -Wsign-conversion
-    -Wformat=2
-    -Wnull-dereference
-    -Wimplicit-fallthrough
-    -Wnon-virtual-dtor
-    -Wold-style-cast
-    -Woverloaded-virtual
-    >
-)
-
-target_link_libraries("${CMAKE_PROJECT_NAME}" PUBLIC
-    tl::expected
+target_link_libraries("${CMAKE_PROJECT_NAME}"
+    PUBLIC tl::expected
+    PRIVATE CCGTemplate_options
 )

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace vsm
+namespace CCGTemplate
 {
 
 int test_me(int a, int b);
@@ -11,4 +11,4 @@ public:
     int run();
 };
 
-} // namespace vsm
+} // namespace CCGTemplate

@@ -11,9 +11,7 @@ add_executable("${CMAKE_PROJECT_NAME}_test"
     ../src/App.cpp
 )
 
-
-target_link_libraries("${CMAKE_PROJECT_NAME}_test" PRIVATE
-    tl::expected
-    gtest
-    gtest_main
+target_link_libraries("${CMAKE_PROJECT_NAME}_test"
+    PUBLIC tl::expected gtest gtest_main
+    PRIVATE CCGTemplate_options
 )
